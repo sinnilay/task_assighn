@@ -7,8 +7,8 @@ export default function Navbar() {
 
   const dispatch=useDispatch()
   const islooggedIn=useSelector(state=>state.auth.isloggedIn)
-    function handlelogout(){
-    dispatch(logout())
+   async function handlelogout(){
+    await dispatch(logout())
     localStorage.removeItem('token');
     navigate('/login')
     console.log(islooggedIn);

@@ -10,7 +10,8 @@ export default function Dashboard() {
     setTasks(data);
   };
 
-  const addTask = async () => {
+  const addTask = async (e) => {
+    e.preventDefault();
     await API.post('/tasks', { title });
     setTitle('');
     fetchTasks();
